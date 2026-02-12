@@ -23,12 +23,12 @@ Um Personal Access Token (PAT) é uma alternativa segura à senha utilizada para
 + Scopes: Selecione as permissões. Para uso comum no terminal (push/pull), marque a opção repo.
 6. Finalizar e Copiar: Clique em Generate token no final da página.
 
-
-#### Passo a Passo para Criar um Token (Classic)
-
-
 ### Salvar em cache as credenciais do PAT
+Salvar em cache as credenciais do Personal Access Token (PAT) no Git é uma prática recomendada para aumentar a eficiência no desenvolvimento e melhorar a segurança, evitando a digitação manual de tokens longos e complexos a cada operação de rede (pull/push). 
 
-
+Cache temporário (memória)
+```
+git config --global credential.helper 'cache --timeout=3600'
+```
 
 ## • Qual a diferença entre git merge e git rebase?
