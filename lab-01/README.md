@@ -32,3 +32,4 @@ git config --global credential.helper 'cache --timeout=3600'
 ```
 
 ## • Qual a diferença entre git merge e git rebase?
+A principal diferença é que o git merge preserva todo o histórico de commits, criando um "commit de merge" que une branches, enquanto o git rebase reescreve o histórico movendo commits para criar uma linha do tempo linear e limpa. O merge é seguro para branches compartilhadas, enquanto o rebase simplifica o histórico, mas exige cuidado. 
