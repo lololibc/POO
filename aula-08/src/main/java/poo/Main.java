@@ -4,13 +4,24 @@ public class Main {
 
     static void main(String[] args) {
 
-        Lampada a = new Lampada();
-        Lampada b = new Lampada();
+        Caneta bic = new Caneta();
+        bic.setCor("azul");
+        bic.setNivelTinta(0);
 
-        a.apertarInterruptor();
+        String cor = bic.getCor();
+        double nivelTinta = bic.getNivelTinta();
 
-        System.out.println(a.isLigada());
-        System.out.println(b.isLigada());
+        bic.abrirFechar();
+        System.out.println(bic.desenhar(2,2, 4, 4));
+        System.out.println(bic.getNivelTinta());
+
+//        Lampada a = new Lampada();
+//        Lampada b = new Lampada();
+//
+//        a.apertarInterruptor();
+//
+//        System.out.println(a.isLigada());
+//        System.out.println(b.isLigada());
 
     }
 }
