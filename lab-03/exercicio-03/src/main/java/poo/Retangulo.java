@@ -84,17 +84,34 @@ public class Retangulo {
 
     @Override
     public String toString() {
-        if(Objects.equals(codif, "ASCII")){
-            String linhaTopo = "+"+ "-".repeat(largura-2) + "+" + "\n";
-            if(altura>2){
-                String linhaMeio = ("|" + " ".repeat(largura-2) + "|" + "\n").repeat(altura-2);
-                return linhaTopo + linhaMeio + linhaTopo;
-            }else{
-                return linhaTopo.repeat(2);
+
+            String esqTopo = "+";
+            String dirTopo = "+";
+            String meioLarg = "-";
+            String meioAlt = "|";
+            String esqBaixo = "+";
+            String dirBaixo = "+";
+            if (Objects.equals(codif, "UTF8")){
+                esqTopo = "\u250c";
+                dirTopo = "\u2510";
+                meioLarg = "\u2500";
+                meioAlt = "\u2502";
+                esqBaixo = "\u2514";
+                dirBaixo = "\u2518";
             }
 
-        } else{
-            return "NAo fiz";
-        }
+
+
+
+            String linhaTopo = esqTopo + meioLarg.repeat(largura-2) + dirTopo + "\n";
+            String linhaBaixo = esqBaixo + meioLarg.repeat(largura-2) + dirBaixo + "\n";
+            if(altura>2){
+                String linhaMeio = (meioAlt + " ".repeat(largura-2) + meioAlt + "\n").repeat(altura-2);
+                return linhaTopo + linhaMeio + linhaBaixo;
+            }else{
+                return linhaTopo + linhaBaixo;
+            }
+
+
     }
 }
