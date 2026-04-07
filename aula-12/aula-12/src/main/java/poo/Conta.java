@@ -3,7 +3,7 @@ package poo;
 public class Conta {
 
     //atributos
-    private final String num;
+    private final int num;
     private final String nome;
     private int saldo;
 
@@ -11,7 +11,7 @@ public class Conta {
 
     //construtor
 
-    public Conta(String num, String nome, int saldo) {
+    public Conta(int num, String nome, int saldo) {
         this.num = num;
         this.nome = nome;
         this.saldo = saldo;
@@ -20,7 +20,7 @@ public class Conta {
 
     //getters
 
-    public String getNum() {
+    public int getNum() {
         return num;
     }
 
@@ -36,8 +36,13 @@ public class Conta {
         this.saldo += valor;
     }
 
-    public void sacar(int valor){
-        this.saldo = ((saldo-valor) <0) ? this.saldo : saldo-valor;
+    public boolean sacar(int valor){
+        if(saldo>=valor){
+            this.saldo -= valor;
+            return true;
+        }else{
+            return false;
+        }
     }
 
     @Override
