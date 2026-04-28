@@ -5,8 +5,8 @@ classDiagram
 direction LR
 
     Agenda "1" *-- "0..." Contato
-    Contato "1" *-- "0..." colecaoTelefone
-    Contato "1" *-- "0..." colecaoEmail
+    Contato "1" *-- "0..." ColecaoTelefone
+    Contato "1" *-- "0..." ColecaoEmail
     
     
     class Agenda{
@@ -40,14 +40,14 @@ direction LR
         +toString(): String
 
     }
-    class colecaoTelefone{
+    class ColecaoTelefone{
         -dados: HashMap<String><String>
         +add(rotulo: String, valor: String)boolean
         +remove(rotulo: String)boolean
         +update(rotulo: String, valor: String)boolean
         +toString()String
     }
-    class colecaoEmail{
+    class ColecaoEmail{
         -dados: HashMap<String><String>
         +add(rotulo: String, valor: String)boolean
         +remove(rotulo: String)boolean
