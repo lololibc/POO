@@ -13,16 +13,17 @@ public class ColecaoEmail {
 
     public boolean add (String rotulo, String valor){
         String eR = "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$";
-        if ((rotulo.equals("comercial") || rotulo.equals("pessoal")) && valor.matches(eR)){
+        if(!dados.containsKey(rotulo) && valor.matches(eR)){
             dados.put(rotulo, valor);
             return true;
         }else{
             return false;
         }
+
     }
 
     public boolean remove (String rotulo){
-        if (dados.get(rotulo) != null){
+        if (dados.containsKey(rotulo)){
             dados.remove(rotulo);
             return true;
         }else{
