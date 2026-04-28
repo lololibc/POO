@@ -11,6 +11,8 @@ public class ColecaoEmail {
 
     private HashMap<String, String> dados =  new HashMap<>();
 
+
+
     public boolean add (String rotulo, String valor){
         String eR = "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$";
         if(!dados.containsKey(rotulo) && valor.matches(eR)){

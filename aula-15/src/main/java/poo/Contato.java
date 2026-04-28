@@ -25,6 +25,14 @@ public class Contato {
     private ColecaoTelefone telefones;
     private ColecaoEmail emails;
 
+    public String getNome() {
+        return nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
     public Contato(String nome, String sobrenome, LocalDate dataNasc) {
         this.nome = nome;
         this.sobrenome = sobrenome;
