@@ -2,7 +2,7 @@ package poo;
 
 import java.util.HashMap;
 
-public class ColecaoTelefone {
+public class ColecaoEmail {
 //        -dados: HashMap<String><String>
 //        +add(rotulo: String, valor: String)boolean
 //        +remove(rotulo: String)boolean
@@ -12,8 +12,8 @@ public class ColecaoTelefone {
     private HashMap<String, String> dados =  new HashMap<>();
 
     public boolean add (String rotulo, String valor){
-        String eR = "^[0-9]+$";
-        if ((rotulo.equals("celular") || rotulo.equals("comercial") || rotulo.equals("pessoal")) && valor.matches(eR)){
+        String eR = "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$";
+        if ((rotulo.equals("comercial") || rotulo.equals("pessoal")) && valor.matches(eR)){
             dados.put(rotulo, valor);
             return true;
         }else{
@@ -28,21 +28,35 @@ public class ColecaoTelefone {
         }else{
             return false;
         }
+
     }
 
     public boolean update(String rotulo, String valor){
-        String eR = "^[0-9]+$";
+        String eR = "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$";
         if(dados.containsKey(rotulo) && valor.matches(eR)){
             dados.put(rotulo, valor);
             return true;
         }else{
             return false;
         }
+
     }
 
-    //TODO
     @Override
     public String toString() {
-        return "hm nao sei nao bbs";
+        StringBuilder resultado = new StringBuilder();
+
+        dados.forEach((rotulo, valor) -> {
+            resultado.append(rotulo)
+                    .append(": ")
+                    .append(valor)
+                    .append("\n");
+        });
+
+        return resultado.toString();
     }
+
+
+
+
 }
