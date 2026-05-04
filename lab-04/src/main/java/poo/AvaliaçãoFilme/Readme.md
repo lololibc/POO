@@ -20,7 +20,7 @@ classDiagram
         -nota: int
         -comentario: String
         -filme: Filme
-        +Avaliacao(f: Filme)
+        +Avaliacao(f: Filme, c: String, n: int)
     }
     
     class Filme{
@@ -29,16 +29,18 @@ classDiagram
         -genero: String
         -diretor: Diretor
         -atores: ArrayList~Ator~
-        +Filme()
+        +Filme(t: String, a: localDate, g: genero, d: Diretor, at: ArrayList~Ator~)
     }
     class Diretor{
         -nome: String
         -dataNasc: localDate
+        +Diretor(n: String, d: localDate)
     }  
     
     class Ator{
         -nome: String
         -dataNasc: localDate
+        +Ator(n: String, d: localDate)
     }
 
 ```
