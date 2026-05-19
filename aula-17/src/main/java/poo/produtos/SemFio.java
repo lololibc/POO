@@ -14,6 +14,10 @@ public class SemFio extends Telefone{
         this.distancia = distancia;
     }
 
+    public double getFrequencia() {
+        return frequencia;
+    }
+
     //sobrescreve o metodo do pai
     @Override
     public String toString() {
