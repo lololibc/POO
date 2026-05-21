@@ -48,6 +48,10 @@ public class Main {
             if (p instanceof Guerreiro g){
                 IO.println(g.atacar());
             }
+            if (p instanceof Coletor col){
+                IO.println(col.coletarMadeira());
+                IO.println(col.coletarOuro());
+            }
         }
 
 
