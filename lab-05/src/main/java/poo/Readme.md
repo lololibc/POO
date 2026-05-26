@@ -18,7 +18,11 @@ classDiagram
         +atualiza()*
     }
     class Digital{
-        -cronometro: Cronometro
+        #cronometro: Cronometro
+        #segmentos: ArrayList~Segmento~
+        #hora: int
+        #minuto: int
+        #segundo: int        
         +Digital(h: int, m: int, s: int, t: int)
     }
     class Analogico{
