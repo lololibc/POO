@@ -3,20 +3,28 @@ package poo;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class App {
     static void main() {
 
-        Caixa<String> c = new Caixa<>("fala bbs");
-        Caixa<Pessoa> d = new Caixa<>(new Pessoa("lou"));
+        Scanner ler = new Scanner(System.in);
+        int a, b;
 
-        String s = c.getConteudo();
+        try{
+            System.out.println("Entre com n:");
+            a = ler.nextInt();
+            System.out.println("Entre com n: ");
+            b = ler.nextInt();
 
-        String errado = d.getConteudo();
+            int res = a/b;
 
-        ArrayList<String> teste = new ArrayList<>();
-
-        HashMap<String, String> mapa = new HashMap();
+        }catch (Exception e){
+            System.err.println("Apenas num inteiros");
+            ler.nextLine();
+        }
+        System.out.println("Fim do programa");
 
 
 
