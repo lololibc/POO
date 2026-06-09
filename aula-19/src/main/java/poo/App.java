@@ -2,10 +2,13 @@ package poo;
 import edu.princeton.cs.algs4.Draw;
 import edu.princeton.cs.algs4.DrawListener;
 
+import java.lang.reflect.Array;
+
 public class App implements DrawListener {
 
 
     private Draw draw;
+    CartaGrafica asO = new CartaGrafica(Naipe.OURO, Valor.AS, 100, 100);
 
 
     public App() {
@@ -17,13 +20,16 @@ public class App implements DrawListener {
         this.draw.setDefaultCloseOperation(3);
         this.draw.enableDoubleBuffering();
         this.draw.addListener(this);
+
+
+        asO.desenhar(draw);
     }
 
     @Override
     public void mouseClicked(double x, double y) {
-        this.draw.picture(x, y, "cartas/1p.png");
-        this.draw.show();
-
+        if(asO.clicouDentro(x, y)){
+            asO.desenhar(draw);
+        }
 
 
     }
