@@ -2,13 +2,13 @@ package poo;
 
 import edu.princeton.cs.algs4.Draw;
 
-public class CartaGrafica extends Carta{
+public class CartaGui extends Carta implements Gui{
 
-    private int x;
-    private int y;
+    private double x;
+    private double y;
     private boolean frente;
 
-    public CartaGrafica(Naipe naipe, Valor valor, int x, int y) {
+    public CartaGui(Naipe naipe, Valor valor, double x, double y) {
         super(naipe, valor);
         this.x = x;
         this.y = y;

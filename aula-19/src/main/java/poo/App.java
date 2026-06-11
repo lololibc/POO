@@ -2,18 +2,16 @@ package poo;
 import edu.princeton.cs.algs4.Draw;
 import edu.princeton.cs.algs4.DrawListener;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.function.ToDoubleBiFunction;
 
 public class App implements DrawListener {
 
 
     private Draw draw;
-    private ArrayList<CartaGrafica> baralho = new ArrayList<>();
+    CartaGui seteO = new CartaGui(Naipe.OURO, Valor.SETE, 100, 100);
+    DadoGui dado = new DadoGui(300, 100);
 
-
-    CartaGrafica asO = new CartaGrafica(Naipe.OURO, Valor.AS, 100, 100);
+    ArrayList<Gui> elementos = new ArrayList<>();
 
 
     public App() {
@@ -26,31 +24,20 @@ public class App implements DrawListener {
         this.draw.enableDoubleBuffering();
         this.draw.addListener(this);
 
-        //TODO ARRUMAR ESSE TROÇO
-        int x =10;
-        int y = 600;
-        for (Naipe n : Naipe.values()){
-            for (Valor v : Valor.values()){
-                this.baralho.add(new CartaGrafica(n, v, x, y));
-                x+= 100;
-            }
-            x = 10;
-            y-=60;
+        elementos.add(seteO);
+        elementos.add(dado);
+        for(Gui g : elementos){
+            g.desenhar(draw);
 
-        }
-
-        for(CartaGrafica c: baralho){
-            c.desenhar(this.draw);
         }
 
     }
 
     @Override
     public void mouseClicked(double x, double y) {
-
-        for(CartaGrafica c: baralho){
-            if (c.clicouDentro(x, y)){
-                c.desenhar(this.draw);
+        for(Gui g : elementos){
+            if (g.clicouDentro(x, y)){
+                g.desenhar(draw);
             }
 
         }
